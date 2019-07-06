@@ -1,16 +1,23 @@
 package com.designpatterns.strategy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RunApp {
 	public static void main(String[] args){
-		Sports baseball = new Baseball();
-		Sports basketball = new Basketball();
-		Sports football = new Football();
+		List<Sport> sportsList = new ArrayList<Sport>();
+		sportsList.add(new Baseball());
+		sportsList.add(new Basketball());
+		sportsList.add(new Football());
+	
+		System.out.println("Offense Draws the Crowd!");
+		for(Sport s: sportsList) {
+			System.out.println(s.getSportName() + " - " + s.makeOffensivePlay());
+		}
 		
-		System.out.println(baseball.getSportName() + " - " + baseball.makeDefensivePlay());
-		System.out.println(basketball.getSportName() + " - " + basketball.makeDefensivePlay());
-		System.out.println(football.getSportName() + " - " + football.makeDefensivePlay());
-		System.out.println(baseball.getSportName() + " - " + baseball.makeOffensivePlay());
-		System.out.println(basketball.getSportName() + " - " + basketball.makeOffensivePlay());
-		System.out.println(football.getSportName() + " - " + football.makeOffensivePlay());
+		System.out.println("\nDefense Wins Championships!");
+		for(Sport s: sportsList) {
+			System.out.println(s.getSportName() + " - " + s.makeDefensivePlay());
+		}		
 	}
 }

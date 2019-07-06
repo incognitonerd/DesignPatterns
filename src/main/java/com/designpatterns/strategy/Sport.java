@@ -1,6 +1,6 @@
 package com.designpatterns.strategy;
 
-public abstract class Sports {
+public abstract class Sport {
 	private String sportName;
 	public Offense offensivePlay;
 	public Defense defensivePlay;
